@@ -1,11 +1,20 @@
 <?PHP
-	$OB= new main();
+	$O= new main();
 	//1st
-	$OB -> e1('');
-	$st = ;
-	$OB -> e2('Result');
-	$OB -> e3;
+	$O -> e1('addcslashes()');
+	$s = '1,al /?\'h[s{g]g|`s!ad';
+	$O -> e2($s);
+	$O -> e2('Result');
+	$O -> e2( $O -> AddSla($s, 'A..z'));
+	$O -> e3();
 
+        //
+	$O -> e1('addcslashes()');
+	$s = '1,al /?\'h[s{g]g|`s!ad';
+	$O -> e2($s);
+	$O -> e2('Result');
+	$O -> e2();
+	$O -> e3();
 
 
 
@@ -24,6 +33,9 @@
 		}
 	public function e3(){
 		echo "<hr>";
+		}
+	public function AddSla($a, $b){
+		return addcslashes($a, $b);
 		}
 		
 
