@@ -59,7 +59,23 @@
 	$OB -> e3();
 
 	//5th
-	$OB -> 
+	$OB -> e1('array_count_values()');
+	$ar = array(1,4,4,4,55,55,66,6,1,1,1,1,1,1,1,'w','w','w','w','w','d','g','b','ff','ff');
+	$OB -> P2($ar);
+	$OB -> e2('Result');
+	$OB -> P2( $OB -> ConVal($ar));
+	$OB -> e3();
+
+	//6th
+	$OB -> e1('array_diff_assoc');
+	$ar1 = array('c'=>'apple', 'd' => 'dark', 0, 'good');
+	$ar2 = array('c'=>'apple', 'dark', 'good','0'=>0);
+	$OB -> P2($ar1);
+	$OB -> P2($ar2);
+	$OB -> e2('Result');
+	$OB -> P2( $OB -> DifAss($ar1, $ar2));
+	$OB -> e3();
+
 
 	echo '</ul>';
 	
@@ -98,6 +114,14 @@
 
 		public function Comb($a, $b){
 			return array_combine($a, $b);
+		}
+
+		public function ConVal($a){
+			return array_count_values($a);
+		}
+
+		public function DifAss($a, $b){
+			return array_diff_assoc($a, $b);
 		}
 
 		public function __destruct(){}
