@@ -18,7 +18,49 @@
 	$OB -> P2( $OB -> Chu($ar, 2));
 	$OB -> e3();
 
-	
+	//3rd
+	$OB -> e1('array_column()');
+	$ar = array(
+			array(
+	            	'No' => 1,
+		    	'stuff' => 'Bag',
+	            	'type' => 'black',
+			),
+			array(
+ 	            	'No' => 2,
+			'stuff' => 'Cloth',
+		    	'type' => 'yellow',
+		    	),
+			array(
+			'No' => 3,
+			'stuff' => 'Nike',
+			'type' => 'blue',
+			),
+			array(
+			'No' => 4,
+			'stuff' => 'Hat',
+			'type'  => 'white',
+			)
+	);
+	$OB -> e2('Array');
+	$OB -> P2($ar);
+	$OB -> e2('Show stuff with type');
+	$OB -> P2($OB -> Col($ar, 'type', 'stuff'));
+	$OB -> e3();
+
+	//4th
+	$OB -> e1('array_combine');
+	$ar1 = array('Hey', 'What\'s', 'It\'s');
+	$ar2 = array('man', 'up', 'mine');
+	$OB -> P2($ar1);
+	$OB -> P2($ar2);
+	$OB -> e2('Combine');
+	$OB -> P2($OB -> Comb($ar1, $ar2));
+	$OB -> e3();
+
+	//5th
+	$OB -> 
+
 	echo '</ul>';
 	
 	class main{		
@@ -50,7 +92,15 @@
 			return array_chunk($a,$b);
 		}
 		
-		Public function __destruct(){}
+		public function Col($a,$b,$c){
+			return array_column($a,$b,$c);
+		}
+
+		public function Comb($a, $b){
+			return array_combine($a, $b);
+		}
+
+		public function __destruct(){}
 	}
 ?>
 	
